@@ -23,12 +23,7 @@ public class CreateCourierAndCheckResponseTest {
         GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
         JSONObject credentials = courier.generateLoginPassword();
         // создание курьера
-        Response response1 = given()
-                .header("Content-type", "application/json")
-                .and()
-                .body(credentials.toString())
-                .when()
-                .post("/api/v1/courier");
+        Response response1 = courier.createCourier(credentials);
         response1.then().assertThat().statusCode(201)
             .and().assertThat().body("ok", equalTo(true));
         // логин курьера

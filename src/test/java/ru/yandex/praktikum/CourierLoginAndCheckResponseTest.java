@@ -43,7 +43,7 @@ public class CourierLoginAndCheckResponseTest {
         // создание пары логин - пустой пароль
         GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
         JSONObject json = courier.generateEmptyPassword();
-        // запрос без пароля
+        // логин без пароля
         Response response = courier.loginCourier(json);
         response.then().assertThat().statusCode(400).and().assertThat().body("message",equalTo("Недостаточно данных для входа"));
     }
@@ -53,7 +53,7 @@ public class CourierLoginAndCheckResponseTest {
         // создание пары логин - пароль
         GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
         JSONObject json = courier.generateLoginPassword();
-        // запрос с несуществующей парой логин - пароль
+        // логин с несуществующей парой логин - пароль
         Response response = courier.loginCourier(json);
         response.then().assertThat().statusCode(404).and().assertThat().body("message",equalTo("Учетная запись не найдена"));
     }
