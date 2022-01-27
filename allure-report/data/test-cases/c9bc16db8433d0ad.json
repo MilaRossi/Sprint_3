@@ -1,0 +1,57 @@
+{
+  "uid" : "c9bc16db8433d0ad",
+  "name" : "loginCourierAndCheckResponse200",
+  "historyId" : "ru.yandex.praktikum.CourierLoginTest:ru.yandex.praktikum.CourierLoginTest#loginCourierAndCheckResponse200",
+  "time" : {
+    "duration" : 1055
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9fc76606ce308f5",
+      "name" : "System out",
+      "source" : "9fc76606ce308f5.txt",
+      "type" : "text/plain",
+      "size" : 321
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "resultFormat",
+    "value" : "junit"
+  }, {
+    "name" : "suite",
+    "value" : "ru.yandex.praktikum.CourierLoginTest"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.yandex.praktikum.CourierLoginTest"
+  }, {
+    "name" : "package",
+    "value" : "ru.yandex.praktikum.CourierLoginTest"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c9bc16db8433d0ad.json",
+  "parameterValues" : [ ]
+}

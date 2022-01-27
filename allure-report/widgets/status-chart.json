@@ -1,0 +1,89 @@
+[ {
+  "uid" : "4220afe1cfebc46f",
+  "name" : "loginCourierAndCheckResponse404",
+  "time" : {
+    "duration" : 311
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3b876bd7ee6b09af",
+  "name" : "loginCourierAndCheckResponse400",
+  "time" : {
+    "duration" : 305
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fa398aefa103e545",
+  "name" : "orderCreateTest[1]",
+  "time" : {
+    "duration" : 380
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "81aaa886fd29e593",
+  "name" : "createCourierAndCheckResponse409",
+  "time" : {
+    "duration" : 570
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "402fd05ea7a327a9",
+  "name" : "orderCreateTest[2]",
+  "time" : {
+    "duration" : 329
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "87f6db2148e12f9b",
+  "name" : "getOrdersAndCheckResponse",
+  "time" : {
+    "duration" : 1190
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5d69a3b616447c6",
+  "name" : "orderCreateTest[3]",
+  "time" : {
+    "duration" : 328
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8a18072b35788ae2",
+  "name" : "createCourierAndCheckResponse201",
+  "time" : {
+    "duration" : 930
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "49362f2a2b2ba5ed",
+  "name" : "orderCreateTest[0]",
+  "time" : {
+    "duration" : 2464
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c9bc16db8433d0ad",
+  "name" : "loginCourierAndCheckResponse200",
+  "time" : {
+    "duration" : 1055
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4c095956ede3ff1a",
+  "name" : "createCourierAndCheckResponse400",
+  "time" : {
+    "duration" : 322
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

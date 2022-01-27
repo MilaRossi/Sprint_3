@@ -1,0 +1,57 @@
+{
+  "uid" : "fa398aefa103e545",
+  "name" : "orderCreateTest[1]",
+  "historyId" : "ru.yandex.praktikum.OrderCreateTest:ru.yandex.praktikum.OrderCreateTest#orderCreateTest[1]",
+  "time" : {
+    "duration" : 380
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "29620de702593aad",
+      "name" : "System out",
+      "source" : "29620de702593aad.txt",
+      "type" : "text/plain",
+      "size" : 319
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "resultFormat",
+    "value" : "junit"
+  }, {
+    "name" : "suite",
+    "value" : "ru.yandex.praktikum.OrderCreateTest"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.yandex.praktikum.OrderCreateTest"
+  }, {
+    "name" : "package",
+    "value" : "ru.yandex.praktikum.OrderCreateTest"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fa398aefa103e545.json",
+  "parameterValues" : [ ]
+}

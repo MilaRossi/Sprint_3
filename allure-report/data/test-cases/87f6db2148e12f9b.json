@@ -1,0 +1,57 @@
+{
+  "uid" : "87f6db2148e12f9b",
+  "name" : "getOrdersAndCheckResponse",
+  "historyId" : "ru.yandex.praktikum.GetOrdersTest:ru.yandex.praktikum.GetOrdersTest#getOrdersAndCheckResponse",
+  "time" : {
+    "duration" : 1190
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2c5775b10930b3aa",
+      "name" : "System out",
+      "source" : "2c5775b10930b3aa.txt",
+      "type" : "text/plain",
+      "size" : 314
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "resultFormat",
+    "value" : "junit"
+  }, {
+    "name" : "suite",
+    "value" : "ru.yandex.praktikum.GetOrdersTest"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.yandex.praktikum.GetOrdersTest"
+  }, {
+    "name" : "package",
+    "value" : "ru.yandex.praktikum.GetOrdersTest"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "87f6db2148e12f9b.json",
+  "parameterValues" : [ ]
+}

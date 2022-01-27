@@ -1,0 +1,186 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "ru.yandex.praktikum.CourierLoginTest",
+    "children" : [ {
+      "name" : "loginCourierAndCheckResponse404",
+      "uid" : "4220afe1cfebc46f",
+      "parentUid" : "28ac2dae34467acb91284e6fef58f495",
+      "status" : "passed",
+      "time" : {
+        "duration" : 311
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "loginCourierAndCheckResponse400",
+      "uid" : "3b876bd7ee6b09af",
+      "parentUid" : "28ac2dae34467acb91284e6fef58f495",
+      "status" : "passed",
+      "time" : {
+        "duration" : 305
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "loginCourierAndCheckResponse200",
+      "uid" : "c9bc16db8433d0ad",
+      "parentUid" : "28ac2dae34467acb91284e6fef58f495",
+      "status" : "passed",
+      "time" : {
+        "duration" : 1055
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "28ac2dae34467acb91284e6fef58f495"
+  }, {
+    "name" : "ru.yandex.praktikum.OrderCreateTest",
+    "children" : [ {
+      "name" : "orderCreateTest[1]",
+      "uid" : "fa398aefa103e545",
+      "parentUid" : "3ad716a8e252c59c896fc32d2b3eb60c",
+      "status" : "passed",
+      "time" : {
+        "duration" : 380
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "orderCreateTest[2]",
+      "uid" : "402fd05ea7a327a9",
+      "parentUid" : "3ad716a8e252c59c896fc32d2b3eb60c",
+      "status" : "passed",
+      "time" : {
+        "duration" : 329
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "orderCreateTest[3]",
+      "uid" : "5d69a3b616447c6",
+      "parentUid" : "3ad716a8e252c59c896fc32d2b3eb60c",
+      "status" : "passed",
+      "time" : {
+        "duration" : 328
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "orderCreateTest[0]",
+      "uid" : "49362f2a2b2ba5ed",
+      "parentUid" : "3ad716a8e252c59c896fc32d2b3eb60c",
+      "status" : "passed",
+      "time" : {
+        "duration" : 2464
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "3ad716a8e252c59c896fc32d2b3eb60c"
+  }, {
+    "name" : "ru.yandex.praktikum.CourierCreateTest",
+    "children" : [ {
+      "name" : "createCourierAndCheckResponse409",
+      "uid" : "81aaa886fd29e593",
+      "parentUid" : "283a5d641322690a5085842c2441aa0a",
+      "status" : "passed",
+      "time" : {
+        "duration" : 570
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "createCourierAndCheckResponse201",
+      "uid" : "8a18072b35788ae2",
+      "parentUid" : "283a5d641322690a5085842c2441aa0a",
+      "status" : "passed",
+      "time" : {
+        "duration" : 930
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "createCourierAndCheckResponse400",
+      "uid" : "4c095956ede3ff1a",
+      "parentUid" : "283a5d641322690a5085842c2441aa0a",
+      "status" : "passed",
+      "time" : {
+        "duration" : 322
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "283a5d641322690a5085842c2441aa0a"
+  }, {
+    "name" : "ru.yandex.praktikum.GetOrdersTest",
+    "children" : [ {
+      "name" : "getOrdersAndCheckResponse",
+      "uid" : "87f6db2148e12f9b",
+      "parentUid" : "840125bd242a53da86e0ddb29b27928a",
+      "status" : "passed",
+      "time" : {
+        "duration" : 1190
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "840125bd242a53da86e0ddb29b27928a"
+  } ]
+}
