@@ -9,7 +9,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CourierLoginAndCheckResponseTest {
+public class CourierLoginTest {
     @Before
     public void setUp() {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
@@ -18,7 +18,7 @@ public class CourierLoginAndCheckResponseTest {
     @Test
     public void loginCourierAndCheckResponse200() {
         // создание пары логин-пароль
-        GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
+        Courier courier = new Courier();
         JSONObject credentials = courier.generateLoginPassword();
         // создание курьера
         courier.createCourier(credentials)
@@ -41,7 +41,7 @@ public class CourierLoginAndCheckResponseTest {
     @Test
     public void loginCourierAndCheckResponse400() {
         // создание пары логин - пустой пароль
-        GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
+        Courier courier = new Courier();
         JSONObject json = courier.generateEmptyPassword();
         // логин без пароля
         Response response = courier.loginCourier(json);
@@ -51,7 +51,7 @@ public class CourierLoginAndCheckResponseTest {
     @Test
     public void loginCourierAndCheckResponse404() {
         // создание пары логин - пароль
-        GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
+        Courier courier = new Courier();
         JSONObject json = courier.generateLoginPassword();
         // логин с несуществующей парой логин - пароль
         Response response = courier.loginCourier(json);

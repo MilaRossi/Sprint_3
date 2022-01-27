@@ -10,7 +10,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CreateCourierAndCheckResponseTest {
+public class CourierCreateTest {
 
     @Before
     public void setUp() {
@@ -20,7 +20,7 @@ public class CreateCourierAndCheckResponseTest {
     @Test
     public void createCourierAndCheckResponse201() {
         // создание пары логин-пароль
-        GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
+        Courier courier = new Courier();
         JSONObject credentials = courier.generateLoginPassword();
         // создание курьера
         Response response1 = courier.createCourier(credentials);
@@ -43,7 +43,7 @@ public class CreateCourierAndCheckResponseTest {
     @Test
     public void createCourierAndCheckResponse400() {
         // создание пары логин - пустой пароль
-        GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
+        Courier courier = new Courier();
         JSONObject credentials = courier.generateEmptyPassword();
         // создание курьера
         Response response = given()
@@ -61,7 +61,7 @@ public class CreateCourierAndCheckResponseTest {
     @Test
     public void createCourierAndCheckResponse409() {
         // создание пары логин-пароль
-        GenerateLoginPasswordForCourier courier = new GenerateLoginPasswordForCourier();
+        Courier courier = new Courier();
         JSONObject credentials = courier.generateLoginPassword();
         // создание курьера
         Response responseFirst = given().header("Content-type", "application/json")

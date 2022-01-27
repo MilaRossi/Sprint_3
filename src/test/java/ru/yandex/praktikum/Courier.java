@@ -3,12 +3,9 @@ package ru.yandex.praktikum;
 import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.json.JSONObject;
-
 import static io.restassured.RestAssured.given;
 
-
-public class GenerateLoginPasswordForCourier {
-
+public class Courier {
 
     public JSONObject generateLoginPassword() {
         String courierLogin = RandomStringUtils.randomAlphabetic(10);
