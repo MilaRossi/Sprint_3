@@ -7,12 +7,6 @@ import static io.restassured.RestAssured.given;
 
 class Order {
 
-    public int orderCreate(JSONObject fields) {
-        return given().header("Content-type", "application/json")
-                .body(fields.toString()).when().post("/api/v1/orders").statusCode();
-    }
-
-
     public JSONObject fieldsOrderCreate(String[] color) {
         String firstName = RandomStringUtils.randomAlphabetic(10);
         String lastName = RandomStringUtils.randomAlphabetic(10);
@@ -34,6 +28,15 @@ class Order {
         }
         return json;
 
+    }
+
+    public int orderCreate(JSONObject fields) {
+        return given().header("Content-type", "application/json")
+                .body(fields.toString()).when().post("/api/v1/orders").statusCode();
+    }
+
+    public Response getOrders() {
+        return given().get("/api/v1/orders");
     }
 
 }
