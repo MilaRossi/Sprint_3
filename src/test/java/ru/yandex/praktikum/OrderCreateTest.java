@@ -14,10 +14,10 @@ public class OrderCreateTest {
 
     // два поля класса: для JSONObject и ожидаемого результата
     JSONObject fields;
-    int expected;
+    boolean expected;
 
     // конструктор с двумя параметрами
-    public OrderCreateTest(JSONObject fields, int expected) {
+    public OrderCreateTest(JSONObject fields, boolean expected) {
         this.fields = fields;
         this.expected = expected;
     }
@@ -32,10 +32,10 @@ public class OrderCreateTest {
         JSONObject fields4 = order.fieldsOrderCreate( new String[]{});
 
         return new Object[][]{
-                {fields1, 201},
-                {fields2, 201},
-                {fields3, 201},
-                {fields4, 201}
+                {fields1, true},
+                {fields2, true},
+                {fields3, true},
+                {fields4, true}
         };
     }
 
@@ -48,8 +48,9 @@ public class OrderCreateTest {
     @Test
     public void orderCreateTest() {
         Order order = new Order();
-        int actual = order.orderCreate(fields);
+        boolean actual = order.orderCreate(fields);
         assertEquals(expected, actual);
+
     }
 
 

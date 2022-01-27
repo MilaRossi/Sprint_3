@@ -30,9 +30,15 @@ class Order {
 
     }
 
-    public int orderCreate(JSONObject fields) {
-        return given().header("Content-type", "application/json")
-                .body(fields.toString()).when().post("/api/v1/orders").statusCode();
+    public boolean orderCreate(JSONObject fields) {
+        Response response = given().header("Content-type", "application/json")
+                .body(fields.toString()).when().post("/api/v1/orders");
+        Integer track = response.then().extract().path("track");
+        Integer statusCode = response.statusCode();
+        if(statusCode == 201 && track > 0) {
+            return true;
+        }
+        return false;
     }
 
     public Response getOrders() {
