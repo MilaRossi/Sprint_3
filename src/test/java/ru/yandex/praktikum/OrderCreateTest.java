@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import org.json.JSONObject;
 import org.junit.Before;
@@ -46,13 +47,12 @@ public class OrderCreateTest {
     }
 
     @Test
+    @DisplayName("Создать заказ")
     public void orderCreateTest() {
         Order order = new Order();
         boolean actual = order.orderCreate(fields);
-        assertEquals(expected, actual);
-
+        assertEquals("заказ не создан", expected, actual);
     }
-
 
 }
 

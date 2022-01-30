@@ -1,21 +1,28 @@
 package ru.yandex.praktikum;
 
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.json.JSONObject;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CourierLoginTest {
+    Integer courierId = 0;
+
     @Before
     public void setUp() {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
     }
 
     @Test
+    @DisplayName("Логин курьера")
     public void loginCourierAndCheckResponse200() {
         // создание пары логин-пароль
         Courier courier = new Courier();
@@ -29,16 +36,17 @@ public class CourierLoginTest {
         Response response = courier.loginCourier(credentials);
         response.then().assertThat().statusCode(200);
         // извлекаем id курьера
-        Integer id = response.then().extract().path("id");
+        courierId = response.then().extract().path("id");
         assertThat("id",notNullValue());
         // удаляем курьера
-        courier.deleteCourier(id).then().assertThat().statusCode(200)
-                .and()
-                .assertThat().body("ok", equalTo(true));
+//        courier.deleteCourier(id).then().assertThat().statusCode(200)
+//                .and()
+//                .assertThat().body("ok", equalTo(true));
 
     }
 
     @Test
+    @DisplayName("Получить ошибку логина курьера без пароля")
     public void loginCourierAndCheckResponse400() {
         // создание пары логин - пустой пароль
         Courier courier = new Courier();
@@ -49,6 +57,7 @@ public class CourierLoginTest {
     }
 
     @Test
+    @DisplayName("Получить ошибку логина курьера с несуществующей парой логин - пароль")
     public void loginCourierAndCheckResponse404() {
         // создание пары логин - пароль
         Courier courier = new Courier();
@@ -58,6 +67,13 @@ public class CourierLoginTest {
         response.then().assertThat().statusCode(404).and().assertThat().body("message",equalTo("Учетная запись не найдена"));
     }
 
+    @After
+    public void deleteCourier() {
+        if (courierId > 0) {
+            given().header("Content-type", "application/json")
+                    .delete("/api/v1/courier/" + courierId.toString());
 
+        }
+    }
 
 }

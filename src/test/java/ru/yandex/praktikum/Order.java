@@ -4,8 +4,9 @@ import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.json.JSONObject;
 import static io.restassured.RestAssured.given;
+import io.qameta.allure.Step;
 
-class Order {
+public class Order {
 
     public JSONObject fieldsOrderCreate(String[] color) {
         String firstName = RandomStringUtils.randomAlphabetic(10);
@@ -30,6 +31,7 @@ class Order {
 
     }
 
+    @Step("Создание заказа")
     public boolean orderCreate(JSONObject fields) {
         Response response = given().header("Content-type", "application/json")
                 .body(fields.toString()).when().post("/api/v1/orders");
@@ -41,6 +43,7 @@ class Order {
         return false;
     }
 
+    @Step("получить заказы")
     public Response getOrders() {
         return given().get("/api/v1/orders");
     }
