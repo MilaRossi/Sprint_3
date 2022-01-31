@@ -9,8 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
 public class CourierCreateTest {
@@ -30,25 +28,16 @@ public class CourierCreateTest {
         Courier courier = new Courier();
         JSONObject credentials = courier.generateLoginPassword();
         // создание курьера
-        Response response1 = courier.createCourier(credentials);
+        Response responseCreateCourier = courier.createCourier(credentials);
         Integer expectedStatusCodeCreateCourier = 201;
-        Integer actualStatusCodeCreateCourier = response1.statusCode();
+        Integer actualStatusCodeCreateCourier = responseCreateCourier.statusCode();
         assertEquals("Код ответа отличен от 201", expectedStatusCodeCreateCourier, actualStatusCodeCreateCourier);
-        Boolean actualAnswer = response1.then().extract().path("ok");
+        Boolean actualAnswer = responseCreateCourier.then().extract().path("ok");
         assertTrue("В ответе ок", actualAnswer);
         // логин курьера
-        Response response2 = courier.loginCourier(credentials);
-//        Integer expectedStatusCodeLoginCourier = 200;
-//        Integer actualStatusCodeLoginCourier = response2.statusCode();
-//        assertEquals("Код ответа отличен от 200", expectedStatusCodeLoginCourier, actualStatusCodeLoginCourier);
+        Response responseLoginCourier = courier.loginCourier(credentials);
         // извлекаем id курьера
-        courierId = response2.then().extract().path("id");
-//        assertNotNull("ID не получен", courierId);
-//        // удаляем курьера
-//        courier.deleteCourier(id).then().assertThat().statusCode(200)
-//                .and()
-//                .assertThat().body("ok", equalTo(true));
-
+        courierId = responseLoginCourier.then().extract().path("id");
 
     }
 
@@ -60,13 +49,13 @@ public class CourierCreateTest {
         Courier courier = new Courier();
         JSONObject credentials = courier.generateEmptyPassword();
         // создание курьера
-        Response response = given()
+        Response responseCreateCourierWithEmptyPassword = given()
                 .header("Content-type", "application/json")
                 .and()
                 .body(credentials.toString())
                 .when()
                 .post("/api/v1/courier");
-        response.then().assertThat().statusCode(400)
+        responseCreateCourierWithEmptyPassword.then().assertThat().statusCode(400)
                         .and().assertThat().body("message", equalTo("Недостаточно данных для создания учетной записи"));
 
     }
@@ -80,16 +69,16 @@ public class CourierCreateTest {
         Courier courier = new Courier();
         JSONObject credentials = courier.generateLoginPassword();
         // создание курьера
-        Response responseFirst = given().header("Content-type", "application/json")
+        Response responseCreateCourier = given().header("Content-type", "application/json")
                 .and()
                 .body(credentials.toString())
                 .when()
                 .post("/api/v1/courier");
-        responseFirst.then().assertThat().statusCode(201)
+        responseCreateCourier.then().assertThat().statusCode(201)
                 .and().assertThat().body("ok", equalTo(true));
         // повторное создание курьера
-        Response responseSecond = given().header("Content-type", "application/json").and().body(credentials.toString()).when().post("/api/v1/courier");
-        responseSecond.then().assertThat().statusCode(409)
+        Response responseCreateCourierWithReservedCredentials = given().header("Content-type", "application/json").and().body(credentials.toString()).when().post("/api/v1/courier");
+        responseCreateCourierWithReservedCredentials.then().assertThat().statusCode(409)
             .and().assertThat().body("message", equalTo("Этот логин уже используется. Попробуйте другой."));
 
     }

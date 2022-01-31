@@ -6,8 +6,6 @@ import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
 
 public class GetOrdersTest {
@@ -23,9 +21,9 @@ public class GetOrdersTest {
     // получить заказы
     public void getOrdersAndCheckResponse() {
         Order order = new Order();
-        Response response = order.getOrders();
+        Response responseGetOrders = order.getOrders();
 
-        ArrayList orders = response.then().extract().path("orders");
+        ArrayList orders = responseGetOrders.then().extract().path("orders");
         assertNotNull("Пустой список заказов", orders.size());
 
     }

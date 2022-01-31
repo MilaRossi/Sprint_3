@@ -36,11 +36,5 @@ public class Courier {
         return given().header("Content-type", "application/json")
                 .body(creds.toString()).when().post("/api/v1/courier/login");
     }
-//    @Step("удаляем курьера")
-//    public Response deleteCourier(Integer id) {
-//        return given().header("Content-type", "application/json")
-//                .delete("/api/v1/courier/" + id.toString());
-//
-//    }
 
 }

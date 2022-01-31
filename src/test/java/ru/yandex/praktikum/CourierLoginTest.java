@@ -33,15 +33,11 @@ public class CourierLoginTest {
                 .and()
                 .assertThat().body("ok", equalTo(true));
         // логин курьера
-        Response response = courier.loginCourier(credentials);
-        response.then().assertThat().statusCode(200);
+        Response responseLoginCourier = courier.loginCourier(credentials);
+        responseLoginCourier.then().assertThat().statusCode(200);
         // извлекаем id курьера
-        courierId = response.then().extract().path("id");
+        courierId = responseLoginCourier.then().extract().path("id");
         assertThat("id",notNullValue());
-        // удаляем курьера
-//        courier.deleteCourier(id).then().assertThat().statusCode(200)
-//                .and()
-//                .assertThat().body("ok", equalTo(true));
 
     }
 
@@ -52,8 +48,8 @@ public class CourierLoginTest {
         Courier courier = new Courier();
         JSONObject json = courier.generateEmptyPassword();
         // логин без пароля
-        Response response = courier.loginCourier(json);
-        response.then().assertThat().statusCode(400).and().assertThat().body("message",equalTo("Недостаточно данных для входа"));
+        Response responseLoginCourierWithEmptyPassword = courier.loginCourier(json);
+        responseLoginCourierWithEmptyPassword.then().assertThat().statusCode(400).and().assertThat().body("message",equalTo("Недостаточно данных для входа"));
     }
 
     @Test
@@ -63,8 +59,8 @@ public class CourierLoginTest {
         Courier courier = new Courier();
         JSONObject json = courier.generateLoginPassword();
         // логин с несуществующей парой логин - пароль
-        Response response = courier.loginCourier(json);
-        response.then().assertThat().statusCode(404).and().assertThat().body("message",equalTo("Учетная запись не найдена"));
+        Response responseLoginCourierWithNonExistentCredentials = courier.loginCourier(json);
+        responseLoginCourierWithNonExistentCredentials.then().assertThat().statusCode(404).and().assertThat().body("message",equalTo("Учетная запись не найдена"));
     }
 
     @After

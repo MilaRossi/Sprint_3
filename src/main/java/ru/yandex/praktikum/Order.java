@@ -33,10 +33,10 @@ public class Order {
 
     @Step("Создание заказа")
     public boolean orderCreate(JSONObject fields) {
-        Response response = given().header("Content-type", "application/json")
+        Response responseOrderCreate = given().header("Content-type", "application/json")
                 .body(fields.toString()).when().post("/api/v1/orders");
-        Integer track = response.then().extract().path("track");
-        Integer statusCode = response.statusCode();
+        Integer track = responseOrderCreate.then().extract().path("track");
+        Integer statusCode = responseOrderCreate.statusCode();
         if(statusCode == 201 && track > 0) {
             return true;
         }
