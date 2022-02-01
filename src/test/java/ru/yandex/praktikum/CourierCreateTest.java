@@ -22,7 +22,6 @@ public class CourierCreateTest {
 
     @Test
     @DisplayName("Создать курьера")
-
     public void createCourierAndCheckResponse201() {
         // создание пары логин-пароль
         Courier courier = new Courier();
@@ -43,7 +42,6 @@ public class CourierCreateTest {
 
     @Test
     @DisplayName("Получить ошибку создания курьера с пустым паролем")
-
     public void createCourierAndCheckResponse400() {
         // создание пары логин - пустой пароль
         Courier courier = new Courier();
@@ -63,7 +61,6 @@ public class CourierCreateTest {
 
     @Test
     @DisplayName("Получить ошибку создания курьера с зарезервированной парой логин-пароль")
-
     public void createCourierAndCheckResponse409() {
         // создание пары логин-пароль
         Courier courier = new Courier();

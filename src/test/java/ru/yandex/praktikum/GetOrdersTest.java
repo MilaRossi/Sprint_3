@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotEquals;
 
 public class GetOrdersTest {
 
@@ -17,15 +17,11 @@ public class GetOrdersTest {
 
     @Test
     @DisplayName("Получить заказы и проверить ответ")
-
-    // получить заказы
     public void getOrdersAndCheckResponse() {
         Order order = new Order();
         Response responseGetOrders = order.getOrders();
-
         ArrayList orders = responseGetOrders.then().extract().path("orders");
-        assertNotNull("Пустой список заказов", orders.size());
-
+        assertNotEquals("Пустой список заказов", 0, orders.size());
     }
 
 }
